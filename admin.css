@@ -1,0 +1,131 @@
+/* استخدام الألوان الأساسية من style.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.admin-grid {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* زر العودة يجب أن يكون في مكان ثابت في الصفحة */
+.back-button {
+    position: non;
+    top: 20px;
+    right: 20px;
+}
+
+.admin-core-unit {
+    width: 100%;
+    position: relative;
+    padding: 50px 30px;
+    
+    /* تغيير الألوان لتناسب الثيم الأمني (Accent Color هو الوردي/الأحمر) */
+    border: 3px solid var(--accent-color); 
+    border-radius: 15px;
+    background-color: rgba(30, 20, 35, 0.4); 
+    box-shadow: 0 0 50px rgba(255, 0, 119, 0.6), inset 0 0 20px rgba(255, 0, 119, 0.4);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.security-logo {
+    /* توهج الشعار بلون Accent */
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    box-shadow: 0 0 40px rgba(255, 0, 119, 0.8);
+}
+.security-logo .hologram-logo {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px #fff, 0 0 20px var(--accent-color);
+}
+
+.security-tagline {
+    color: var(--primary-neon);
+}
+
+/* تنسيق حقول الإدخال */
+#login-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+.input-container {
+    width: 100%;
+}
+.input-label {
+    display: block;
+    text-align: right;
+    color: var(--text-color);
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.admin-input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1.1em;
+    color: var(--text-color);
+    background-color: #1a2333;
+    border: 2px solid #555; 
+    border-radius: 6px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.admin-input:focus {
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    outline: none;
+}
+
+/* رسالة الخطأ */
+.login-error-msg {
+    color: #ff5722;
+    font-weight: bold;
+    margin-top: 10px;
+    min-height: 20px;
+}
+
+/* زر تسجيل الدخول (3D Style) */
+.login-3d-button {
+    position: relative;
+    font-size: 1.4em;
+    padding: 15px 30px;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+    
+    /* استخدام لون Accent (وردي/أحمر) للزر الأمني */
+    background-color: var(--accent-color); 
+    border: none;
+    border-radius: 10px;
+    /* ظل 3D يعطي عمقاً */
+    box-shadow: 0 6px 0 0 #cc005f, 0 10px 10px rgba(0, 0, 0, 0.4); 
+    transition: all 0.15s ease;
+}
+
+.login-3d-button:hover {
+    background-color: #ff3399;
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 0 0 #cc005f, 0 12px 15px rgba(0, 0, 0, 0.5);
+}
+
+.login-3d-button:active {
+    /* ضغطة الزر */
+    transform: translateY(4px); 
+    box-shadow: 0 2px 0 0 #cc005f, 0 4px 5px rgba(0, 0, 0, 0.4);
+}

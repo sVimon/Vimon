@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimon - تفعيل الجلسة</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="start-session.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="session-grid">
+
+        <a href="index.html" class="back-button nav-button">
+            <i class="fas fa-arrow-right"></i> العودة
+        </a>
+
+        <section class="session-core-unit">
+            
+            <div class="hologram-display">
+                <div class="logo-container">
+                    <div id="rotating-logo" class="hologram-logo">🍎</div> 
+                </div>
+                
+                <h1 class="system-name">Vimon</h1>
+                <p class="tagline">للتفعيل أدخل ID الحساب الخاص بك</p>
+            </div>
+            
+            <div class="input-container">
+                <label for="user-id" class="id-label"> </label>
+                <input type="number" id="user-id" class="id-input" placeholder="أدخل 9 إلى 11 رقم هنا...">
+                <p id="validation-message" class="validation-msg">يجب أن يتكون المعرّف من 9 إلى 11 رقم ليكون صالحاً.</p>
+            </div>
+
+            <button id="start-button" class="start-button unified-button start-3d-button" disabled>
+                <i class="fas fa-play-circle"></i> START 
+            </button>
+
+        </section>
+
+    </div>
+
+    <div id="error-modal" class="modal-overlay">
+        <div class="modal-content 3d-effect">
+            <div class="modal-header">
+                <div class="modal-icon-glow"><i class="fas fa-exclamation-triangle"></i></div>
+                <h2 class="modal-title">خـطأ في النظـام</h2>
+            </div>
+            
+            <div class="modal-body">
+                <p class="error-message">وقع خطأ ما! المرجو المحاولة مجدداً.</p>
+                <p class="error-subtext">System error detected. Please try again later.</p>
+            </div>
+            
+            <div class="modal-footer">
+                <button id="modal-close-button" class="unified-button modal-return-button">
+                    <i class="fas fa-undo-alt"></i> رجوع
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="start-session.js"></script>
+</body>
+</html>

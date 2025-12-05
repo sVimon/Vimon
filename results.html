@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج التسلسل - Vimon Pro Max</title>
+    <link rel="stylesheet" href="results.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        
+        <a href="start-session.html" class="back-button">
+            <i class="fas fa-arrow-right"></i> العودة
+        </a>
+
+        <div class="game-core-unit">
+            <h2 class="game-title">ID : <span id="display-id">...</span></h2>
+            
+            <div class="grid-wrapper"> 
+                
+                <div id="multiplier-column" class="multiplier-column">
+                    </div>
+                
+                <div id="game-grid" class="game-grid">
+                    </div>
+            </div>
+
+            <p id="game-status" class="status-message">اضغط "ابدأ" لعرض أول تنبؤ.</p>
+
+            <div class="control-panel">
+                <button id="restart-button" class="action-button secondary-btn" disabled>
+                    جولة جديدة
+                </button>
+                <button id="main-action-button" class="action-button primary-btn">
+                    ابدأ
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="results.js"></script>
+</body>
+</html>

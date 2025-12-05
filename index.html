@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimon - نظام التنبؤ الذكي</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <div class="main-hologram-grid">
+        
+        <header class="header-links">
+            <button id="theme-toggle" class="nav-button mode-button"><i class="fas fa-sun"></i></button>
+            
+            <a href="feedback.html" class="nav-button feedback-button">
+                <i class="fas fa-comments"></i> آراء العملاء
+            </a>
+            
+            <a href="admin.html" id="admin-button" class="nav-button vimon-admin-button">
+                Vimon Admin <i class="fas fa-lock"></i>
+            </a>
+        </header>
+
+
+        <section class="core-unit">
+            <div class="grid-backdrop"></div> 
+
+            <div class="hologram-center-wrapper"> 
+                
+                <div class="hologram-display">
+                    <div class="logo-container">
+                        <div id="rotating-logo" class="hologram-logo">🍎</div> 
+                    </div>
+                    
+                    <h1 class="system-name" data-text="Vimon">Vimon</h1>
+                    <p class="tagline">نظام التنبؤ الذكي لا خسارة بعد الآن</p>
+                </div>
+
+                <button onclick="window.location.href='start-session.html'" class="main-cta-button unified-button cta-hologram-button">
+                    <i class="fas fa-satellite-"></i> تفعيل ساعة تجريبية
+                </button>
+                
+            </div>
+        </section>
+
+        <section class="data-streams">
+            <h2 class="section-title">Vimon System </h2>
+            
+            <div class="feature-cards-grid">
+                <div class="data-card">
+                    <div class="card-icon-glow"><i class="fas fa-brain"></i></div>
+                    <h3>سرعة في الأداء</h3>
+                    <p>معالجة المعلومات بدقة وسرعة هائلة.</p>
+                </div>
+                <div class="data-card">
+                    <div class="card-icon-glow"><i class="fas fa-chart-line"></i></div>
+                    <h3>معدل دقة 100% </h3>
+                    <p>خوارزمية تنبؤ عالية الكفاءة مع نتائج موثوقة ومُدققة.</p>
+                </div>
+                <div class="data-card">
+                    <div class="card-icon-glow"><i class="fas fa-fingerprint"></i></div>
+                    <h3>تشفير بيومتري</h3>
+                    <p>تأمين الوصول وحماية بيانات المستخدمين بأعلى مستوى من التشفير.</p>
+                </div>
+                <div class="data-card">
+                    <div class="card-icon-glow"><i class="fas fa-users"></i></div>
+                    <h3>مجتمع نشط</h3>
+                    <p>انضم إلى آلاف المستخدمين المستفيدين من نظام Vimon الذكي.</p>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

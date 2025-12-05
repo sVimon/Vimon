@@ -1,0 +1,355 @@
+/**
+ * * * ==============================================================
+ * VIMON PRO - RESULTS FULL CSS (PROFESSIONAL & DETAILED)
+ * ==============================================================
+ * يحتوي هذا الملف على جميع التنسيقات (العامة والخاصة بالنتائج)
+ * لضمان احترافية الموقع والوصول إلى عدد كبير من الأسطر بالتفصيل.
+ * * */
+
+/* ---------------------------------- */
+/* 1. الثوابت العامة والألوان (Root Variables) */
+/* ---------------------------------- */
+:root {
+    --primary-neon: #00AAFF; 
+    --primary-shadow: #0077aa;
+    --accent-color: #FF007F; 
+    --accent-shadow: #cc005f;
+    --logo-glow: rgba(0, 170, 255, 0.8);
+    --bg-dark: #121212; 
+    --card-bg-dark: #1a1a1a; 
+    --apple-safe-color: #4CAF50; 
+    --apple-danger-color: #FF5722;
+    --font-family-primary: 'Arial', sans-serif;
+    --transition-speed: 0.3s;
+    --z-index-high: 100;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-primary);
+}
+
+/* ---------------------------------- */
+/* 2. تنسيق الجسم والخلفية (Body & Layout) */
+/* ---------------------------------- */
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    min-height: 100vh; /* طول الشاشة بالكامل */
+    display: flex;
+    justify-content: center; /* توسيط أفقي */
+    align-items: center; /* توسيط عمودي */
+    padding: 20px 0;
+    overflow-y: auto; /* يسمح بالتمرير إذا كان المحتوى أطول */
+}
+
+.game-container {
+    width: 95%;
+    max-width: 500px;
+    position: relative;
+    padding: 0;
+    margin: auto; 
+    flex-grow: 1; /* يسمح للحاوية بالنمو لملء المساحة */
+}
+
+/* ---------------------------------- */
+/* 3. تنسيق الوحدة الأساسية (Game Core Unit) */
+/* ---------------------------------- */
+.game-core-unit {
+    width: 100%;
+    padding: 25px;
+    border: 3px solid var(--primary-neon);
+    border-radius: 15px;
+    background-color: var(--card-bg-dark); 
+    /* تأثير ظل نيون معقد */
+    box-shadow: 
+        0 0 10px rgba(0, 170, 255, 0.5), 
+        0 0 20px rgba(0, 170, 255, 0.3),
+        inset 0 0 15px rgba(0, 170, 255, 0.2),
+        0 8px 15px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: box-shadow var(--transition-speed) ease;
+}
+
+.game-title {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.status-message {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--primary-neon);
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: color var(--transition-speed);
+}
+
+/* ---------------------------------- */
+/* 4. زر العودة (الاحترافي) */
+/* ---------------------------------- */
+.back-button {
+    position: absolute;
+    top: 20px; 
+    right: 10px; 
+    left: auto;
+    color: white; 
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 8px 15px; 
+    border: 2px solid var(--primary-neon); 
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6); 
+    box-shadow: 0 0 15px var(--logo-glow);
+    transition: all var(--transition-speed) ease;
+    z-index: var(--z-index-high);
+}
+
+.back-button:hover {
+    color: var(--primary-neon);
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px var(--logo-glow), inset 0 0 5px var(--primary-neon);
+    transform: translateY(-2px);
+}
+
+.back-button i {
+    margin-right: 5px;
+    transform: rotate(180deg);
+}
+
+
+/* ---------------------------------- */
+/* 5. تنسيق هيكل الشبكة والمضاعفات */
+/* ---------------------------------- */
+.grid-wrapper {
+    display: flex; 
+    align-items: stretch;
+    gap: 8px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.multiplier-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    width: 80px; 
+    user-select: none; /* لمنع تحديد النص */
+}
+
+.multiplier-cell {
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: transparent; /* مخفي في البداية */
+    border-radius: 6px;
+    margin-bottom: 5px; 
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+}
+
+.multiplier-cell.active {
+    color: white; 
+    background-color: var(--apple-safe-color); 
+    box-shadow: 
+        0 0 15px var(--apple-safe-color), 
+        inset 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05); /* تأثير بسيط عند التفعيل */
+}
+
+/* ---------------------------------- */
+/* 6. شبكة اللعبة والبطاقات (دائري و 3D) */
+/* ---------------------------------- */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 8px; /* زيادة الفراغ بين البطاقات */
+    flex-grow: 1; 
+}
+
+.card-cell {
+    height: 40px; 
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 50%; /* أساس الشكل الدائري */
+    transition: box-shadow var(--transition-speed);
+}
+
+/* تفاعلات البطاقة قبل الكشف */
+.card-cell:not(.flipped):hover {
+    box-shadow: 0 0 10px var(--primary-neon);
+}
+
+/* تنسيق القلب (Flip CSS) */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); /* تحريك احترافي */
+    transform-style: preserve-3d;
+    position: relative;
+    border-radius: 50%;
+}
+.card-cell.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%; 
+    background-size: cover; /* ملء الصورة للدائرة بالكامل */
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+}
+
+/* الوجه الخلفي (الخشبي والنيون) */
+.card-back {
+    transform: translateZ(2px); 
+    background-image: url('images/card_back.jpg'); 
+    border: 3px solid var(--primary-neon); 
+    box-shadow: 
+        0 0 5px rgba(0, 234, 255, 0.7), 
+        inset 0 0 15px rgba(0, 0, 0, 0.8),
+        0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* الوجه الأمامي (التفاح) */
+.card-front {
+    transform: rotateY(180deg) translateZ(2px); 
+    background-color: #383838; 
+}
+
+/* صور التفاح (التفاصيل الدقيقة) */
+.safe-apple {
+    background-image: url('images/apple_safe.jpg'); 
+    border-color: var(--apple-safe-color);
+    box-shadow: 
+        0 0 15px rgba(76, 175, 80, 0.7), 
+        inset 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.danger-apple {
+    background-image: url('images/apple_danger.jpg');
+    border-color: var(--apple-danger-color); 
+    box-shadow: 
+        0 0 15px rgba(255, 87, 34, 0.7), 
+        inset 0 0 5px rgba(255, 87, 34, 0.5);
+}
+
+
+/* ---------------------------------- */
+/* 7. لوحة التحكم والأزرار (3D احترافي) */
+/* ---------------------------------- */
+.control-panel {
+    display: flex;
+    justify-content: center; 
+    gap: 30px; 
+    width: 100%;
+    margin-top: 20px;
+}
+
+.action-button {
+    position: relative;
+    font-size: 1.2em;
+    padding: 12px 25px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    width: 45%; 
+    max-width: 200px;
+}
+
+/* الزر الأساسي (Next/Start) */
+.primary-btn {
+    background-color: var(--primary-neon); 
+    box-shadow: 0 6px 0 0 var(--primary-shadow), 0 10px 10px rgba(0, 0, 0, 0.4); 
+}
+
+.primary-btn:active:not(:disabled) {
+    transform: translateY(4px); 
+    box-shadow: 0 2px 0 0 var(--primary-shadow), 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* الزر الثانوي (Restart) */
+.secondary-btn {
+    background-color: var(--accent-color); 
+    box-shadow: 0 6px 0 0 var(--accent-shadow), 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.secondary-btn:active:not(:disabled) {
+    transform: translateY(4px); 
+    box-shadow: 0 2px 0 0 var(--accent-shadow), 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* حالة التعطيل */
+.action-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #555 !important;
+    box-shadow: 0 4px 0 0 #333, 0 6px 6px rgba(0, 0, 0, 0.3);
+    transform: none !important;
+}
+
+/* ---------------------------------- */
+/* 8. استجابة الهاتف (Desktop-First ولكن تفاصيل مهمة) */
+/* ---------------------------------- */
+@media (max-width: 600px) {
+    .game-core-unit {
+        padding: 15px;
+    }
+    
+    .back-button {
+        top: 15px;
+        right: 15px;
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+
+    .card-cell, .multiplier-cell {
+        height: 35px; /* تقليل الارتفاع قليلاً */
+    }
+
+    .game-grid {
+        gap: 5px;
+    }
+    
+    .multiplier-column {
+        width: 65px; /* تقليل عرض المضاعف */
+    }
+
+    .control-panel {
+        gap: 15px;
+        justify-content: space-between;
+    }
+    
+    .action-button {
+        font-size: 1.1em;
+        padding: 10px 15px;
+        width: 48%;
+    }
+}

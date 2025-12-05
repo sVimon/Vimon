@@ -1,0 +1,302 @@
+/* ** التعديل: إضافة خط افتراضي جذاب ** */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+/* 1. المتغيرات والألوان (Variables) */
+:root {
+    --primary-color: #0c1221;
+    --card-bg: #141b2e;
+    --text-color: #e0f7fa;
+    --primary-neon: #00eaff; /* أزرق نيون */
+    --accent-color: #ff0077; /* وردي نيون */
+    --logo-glow: rgba(0, 234, 255, 0.8);
+    --button-bg-color: #2c3a50;
+    --glitch-color-1: #00eaff;
+    --glitch-color-2: #ff0077;
+    --font-family: 'Cairo', sans-serif; /* استخدام الخط الجديد */
+}
+
+[data-theme='light'] {
+    --primary-color: #f0f0f5;
+    --card-bg: #ffffff;
+    --text-color: #1a1a2e;
+    --primary-neon: #0077ff;
+    --accent-color: #e91e63;
+    --logo-glow: rgba(0, 119, 255, 0.5);
+    --button-bg-color: #e0e0e0;
+}
+
+
+/* 2. الأساسيات (Base Styles) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.main-hologram-grid {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-neon);
+    transition: color 0.3s;
+}
+
+/* 3. عناصر التنقل والأزرار (Navigation & Unified Buttons) */
+.header-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 10px 0;
+    grid-row: 1;
+}
+
+.nav-button {
+    background-color: var(--button-bg-color);
+    color: var(--primary-neon);
+    border: 2px solid var(--primary-neon);
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-neon);
+    color: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-neon);
+    transform: translateY(-2px);
+}
+
+.vimon-admin-button {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(255, 0, 119, 0.6);
+}
+
+.vimon-admin-button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+.unified-button {
+    font-family: var(--font-family);
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.mode-button {
+    width: 45px;
+    justify-content: center;
+    padding: 8px;
+}
+
+/* 4. Core Unit (الواجهة الرئيسية) */
+.core-unit {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: var(--card-bg);
+}
+
+.grid-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0, 234, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 234, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+    animation: scan-line 60s linear infinite;
+}
+
+@keyframes scan-line {
+    to { background-position: 0 -3000px; }
+}
+
+.hologram-center-wrapper {
+    z-index: 10;
+    text-align: center;
+    padding: 40px;
+}
+
+.hologram-display {
+    border: 3px solid var(--primary-neon);
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 30px var(--logo-glow), inset 0 0 15px var(--logo-glow);
+    animation: border-flicker 4s infinite alternate;
+    margin-bottom: 30px;
+}
+
+@keyframes border-flicker {
+    0%, 100% { border-color: var(--primary-neon); box-shadow: 0 0 30px var(--logo-glow), inset 0 0 15px var(--logo-glow); }
+    50% { border-color: rgba(0, 234, 255, 0.5); box-shadow: none; }
+}
+
+.logo-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    background: radial-gradient(circle, var(--primary-neon) 0%, transparent 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px var(--logo-glow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hologram-logo {
+    font-size: 3.5em;
+    color: var(--primary-neon);
+    text-shadow: 0 0 10px #fff, 0 0 20px var(--primary-neon);
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+.system-name {
+    font-size: 5em; 
+    font-weight: bold;
+    color: var(--primary-neon);
+    text-shadow: 0 0 10px var(--primary-neon);
+    margin: 10px 0;
+    position: relative;
+    animation: flicker 4s infinite alternate; 
+}
+
+/* تأثير Glitch على الاسم */
+
+
+@keyframes glitch {
+    0% { transform: translate(1px, 1px); }
+    50% { transform: translate(-1px, -1px); }
+    100% { transform: translate(1px, 1px); }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.9; }
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #99a9c5;
+    margin-top: 10px;
+}
+
+.cta-hologram-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 3px solid var(--accent-color);
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.4em;
+    box-shadow: 0 0 20px rgba(255, 0, 119, 0.8);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cta-hologram-button:hover {
+    background-color: #ff3399;
+    box-shadow: 0 0 30px rgba(255, 0, 119, 1);
+    transform: scale(1.02);
+}
+
+
+/* 5. بطاقات الميزات (Data Streams) */
+.data-streams {
+    grid-row: 3;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.feature-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.data-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--primary-neon);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.data-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 234, 255, 0.5);
+}
+
+.card-icon-glow {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.data-card h3 {
+    color: var(--primary-neon);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.data-card p {
+    color: #b0c4de;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .main-hologram-grid {
+        padding: 10px;
+        gap: 20px;
+    }
+    .system-name {
+        font-size: 3em;
+    }
+    .cta-hologram-button {
+        font-size: 1.1em;
+        padding: 12px 20px;
+    }
+}

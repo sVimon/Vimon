@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimon - لوحة تحكم المشرف</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="dashboard.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="dashboard-grid">
+
+        <section class="dashboard-panel 3d-effect">
+            
+            <div class="panel-header">
+                <div class="header-icon"><i class="fas fa-terminal"></i></div>
+                <h1 class="panel-title">لوحة تحكم Vimon (المشرف: mo3ad)</h1>
+                
+                <a href="index.html" class="logout-button unified-button">
+                    <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+                </a>
+            </div>
+            
+            <div class="panel-body">
+                
+                <div class="control-section id-management-section">
+                    <h2 class="section-heading"><i class="fas fa-key"></i> إدارة المعرّفات الصالحة</h2>
+                    <div class="input-group">
+                        <input type="number" id="new-valid-id" class="control-input" placeholder="أدخل ID جديد (9-11 رقم)...">
+                        <button id="add-id-button" class="control-button add-button">
+                            <i class="fas fa-plus-circle"></i> إضافة ID
+                        </button>
+                    </div>
+                    
+                    <p id="id-message" class="message-text"></p>
+                    
+                    <h3>المعرّفات الصالحة الحالية:</h3>
+                    <ul id="valid-id-list" class="data-list"></ul>
+                </div>
+                
+                <hr class="neon-divider">
+
+                <div class="control-section feedback-management-section">
+                    <h2 class="section-heading"><i class="fas fa-comments"></i> إضافة رأي عميل</h2>
+                    <div class="input-group">
+                        <textarea id="new-feedback-text" class="control-input textarea-input" placeholder="أدخل نص الرأي الجديد هنا..."></textarea>
+                        <button id="add-feedback-button" class="control-button feedback-button">
+                            <i class="fas fa-paper-plane"></i> نشر الرأي
+                        </button>
+                    </div>
+                    <p id="feedback-message" class="message-text"></p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
