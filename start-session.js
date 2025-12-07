@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const validIdsList = [
             "1391906115", 
             "14588899900", 
-            "1234567899"  // IDs الموجودة حالياً 
+            "1234567899",
+            "1391906115",// IDs الموجودة حالياً 
             // 💡 أضف الـ IDs الجديدة هنا مثلاً: "98765432100", 
         ]; 
 
@@ -99,3 +100,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
