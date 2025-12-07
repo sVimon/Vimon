@@ -225,7 +225,7 @@ body {
 /* الوجه الخلفي (الخشبي والنيون) */
 .card-back {
     transform: translateZ(2px); 
-    background-image: url('images/card_back.jpg'); 
+    background-image: url('card_back.jpg'); 
     border: 3px solid var(--primary-neon); 
     box-shadow: 
         0 0 5px rgba(0, 234, 255, 0.7), 
@@ -241,7 +241,7 @@ body {
 
 /* صور التفاح (التفاصيل الدقيقة) */
 .safe-apple {
-    background-image: url('images/apple_safe.jpg'); 
+    background-image: url('apple_safe.jpg'); 
     border-color: var(--apple-safe-color);
     box-shadow: 
         0 0 15px rgba(76, 175, 80, 0.7), 
@@ -249,7 +249,7 @@ body {
 }
 
 .danger-apple {
-    background-image: url('images/apple_danger.jpg');
+    background-image: url('apple_danger.jpg');
     border-color: var(--apple-danger-color); 
     box-shadow: 
         0 0 15px rgba(255, 87, 34, 0.7), 
@@ -352,4 +352,5 @@ body {
         padding: 10px 15px;
         width: 48%;
     }
+
 }
