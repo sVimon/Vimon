@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 🚨 IDs الجديدة يجب أن تُضاف هنا.
         // يجب أن تكون كل ID بين علامات تنصيص ("") ومفصولة بفاصلة (,) عن الـ ID الذي يليه.
         const validIdsList = [
-            "14655566677", 
+            "1391906115", 
             "14588899900", 
             "1234567899"  // IDs الموجودة حالياً 
             // 💡 أضف الـ IDs الجديدة هنا مثلاً: "98765432100", 
@@ -97,4 +97,5 @@ document.addEventListener('DOMContentLoaded', function() {
     errorModal.addEventListener('click', function(e) {
         if (e.target.id === 'error-modal') { hideErrorModal(); }
     });
+
 });
