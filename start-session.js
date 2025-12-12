@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "1489265925",
             "1488806893",
             "1489287141",
+            "1488425507",
         ]; 
 
         // بما أنك لا تريد استخدام التخزين المحلي (localStorage)، سنقوم بتجاهله.
@@ -116,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
 
 
 
