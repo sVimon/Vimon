@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const validIdsList = [ 
             "1502917719",
             "1502976383",
+            "1502972243",
             "1501728135",
             "1502960979",
             "1486689955",
@@ -137,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
 
 
 
