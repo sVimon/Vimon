@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // يجب أن تكون كل ID بين علامات تنصيص ("") ومفصولة بفاصلة (,) عن الـ ID الذي يليه.
         const validIdsList = [ 
             "1502917719",
+            "1504133269",
             "1503239125",
             "1504451915",
             "1504113627",
@@ -154,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
 
 
 
